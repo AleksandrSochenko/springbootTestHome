@@ -32,5 +32,10 @@ public class BallController {
     public void createAndSaveBall(@RequestBody Ball ball) {
         ballService.createAndSaveBall(ball);
     }
+    @PutMapping(path = "/balls/{id}")
+    public void updateBallsById(@PathVariable Long id,
+                                  @RequestBody Ball ball) {
+        ballService.updateBallsById(id, ball);
+    }
 
     }

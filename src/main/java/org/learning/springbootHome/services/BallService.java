@@ -34,5 +34,12 @@ public class BallService {
     public void deleteBallById(Long id) {
         repository.deleteById(id);
     }
+
+    public void updateBallsById(Long id, Ball ball) {
+        Ball ballExisting = getBallById(id);
+        ballExisting.setSize(ball.getSize());
+        ballExisting.setWeight(ball.getWeight());
+        repository.save(ballExisting);
+    }
 }
 
